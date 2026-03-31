@@ -52,3 +52,41 @@ output "db_sg_id" {
   description = "Database security group ID"
   value       = aws_security_group.db_sg.id
 }
+
+########################################
+# EKS Outputs
+########################################
+output "eks_cluster_name" {
+  description = "EKS cluster name"
+  value       = aws_eks_cluster.main.name
+}
+
+output "eks_cluster_arn" {
+  description = "EKS cluster ARN"
+  value       = aws_eks_cluster.main.arn
+}
+
+output "eks_cluster_endpoint" {
+  description = "EKS cluster endpoint"
+  value       = aws_eks_cluster.main.endpoint
+}
+
+output "eks_cluster_version" {
+  description = "EKS cluster version"
+  value       = aws_eks_cluster.main.version
+}
+
+output "eks_node_group_name" {
+  description = "EKS node group name"
+  value       = aws_eks_node_group.main.node_group_name
+}
+
+output "eks_node_role_arn" {
+  description = "IAM role ARN for EKS worker nodes"
+  value       = aws_iam_role.eks_node_role.arn
+}
+
+output "eks_cluster_role_arn" {
+  description = "IAM role ARN for EKS cluster"
+  value       = aws_iam_role.eks_cluster_role.arn
+}
